@@ -1,0 +1,112 @@
+/* Page Centering */
+.container {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 25px;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Floating Label Inputs */
+.input-container {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-container input,
+.input-container textarea {
+  width: 100%;
+  padding: 12px 10px;
+  outline: none;
+  border: 1.5px solid #bbb;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+  background: transparent;
+}
+
+.input-container textarea {
+  height: 120px;
+  resize: none;
+}
+
+.input-container label {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  color: #777;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+/* Animation: Float Label on Focus */
+.input-container input:focus,
+.input-container textarea:focus {
+  border-color: #4285f4;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label,
+.input-container textarea:focus + label,
+.input-container textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  background: #fff;
+  padding: 0 5px;
+  font-size: 12px;
+  color: #4285f4;
+}
+
+/* Rating Stars */
+.rating-box {
+  margin: 20px 0;
+}
+
+.rating-box p {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.stars {
+  display: flex;
+  gap: 8px;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+  transition: 0.3s ease;
+}
+
+.star.active {
+  color: #ffb400;
+  transform: scale(1.1);
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #4285f4;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #3070e0;
+}

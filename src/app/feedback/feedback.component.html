@@ -1,0 +1,42 @@
+<div class="container">
+
+  <h2 class="title">We value your feedback</h2>
+
+  <form [formGroup]="feedbackForm" (ngSubmit)="submitForm()">
+
+    <!-- Name -->
+    <div class="input-container">
+      <input formControlName="name" type="text" required />
+      <label>Your Name</label>
+    </div>
+
+    <!-- Email -->
+    <div class="input-container">
+      <input formControlName="email" type="email" required />
+      <label>Email Address</label>
+    </div>
+
+    <!-- Rating -->
+    <div class="rating-box">
+      <p>Rate your experience</p>
+
+      <div class="stars">
+        <i
+          *ngFor="let star of [1,2,3,4,5]"
+          class="star"
+          [class.active]="star <= rating"
+          (click)="setRating(star)"
+        >★</i>
+      </div>
+    </div>
+
+    <!-- Comment -->
+    <div class="input-container textarea-container">
+      <textarea formControlName="comment" required></textarea>
+      <label>Your Suggestions</label>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Feedback</button>
+  </form>
+</div>
+

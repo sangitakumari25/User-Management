@@ -28,7 +28,7 @@ export class LoginComponent implements AfterViewInit {
     });
   }
 
-  // 🔹 Login Function
+  //  Login Function================================================================================================
   onLogin(loginForm: NgForm) {
     if (!loginForm.valid) {
       alert('Please fill all fields!');
@@ -43,7 +43,7 @@ export class LoginComponent implements AfterViewInit {
         loginForm.value.password === parsedUser.password
       ) {
         alert('Login successful!');
-        this.router.navigate(['/dashboard']); // ✅ Main dashboard
+        this.router.navigate(['/dashboard']); //  Main dashboard
       } else {
         alert('Invalid email or password!');
       }
@@ -52,7 +52,7 @@ export class LoginComponent implements AfterViewInit {
     }
   }
 
-  // 🔹 Signup Function
+  //  Signup Function======================================================================================================
   onSignup(signupForm: NgForm) {
     if (!signupForm.valid) {
       alert('Please fill all fields!');
@@ -67,6 +67,6 @@ export class LoginComponent implements AfterViewInit {
 
     localStorage.setItem('user', JSON.stringify(userData));
     alert('Account created successfully!');
-    this.router.navigate(['/dashboard']); // ✅ Main dashboard
+    this.router.navigate(['/dashboard']); //  Main dashboard==================================================================
   }
 }

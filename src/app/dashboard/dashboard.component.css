@@ -4,89 +4,124 @@
   background: linear-gradient(135deg, #ff4b2b, #ff416c);
   font-family: "Poppins", sans-serif;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
 }
 
 .dashboard-header {
   width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 30px;
 }
 
 .dashboard-header h1 {
   font-size: 2rem;
   margin-bottom: 20px;
-  letter-spacing: 1px;
 }
 
 .header-buttons {
   display: flex;
+  justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .header-buttons button {
   background: #fff;
-  border: none;
   color: #ff4b2b;
+  border: none;
   padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  opacity: 1; /* Ensure visible */
+  transition: 0.3s;
 }
 
 .header-buttons button:hover {
+  transform: scale(1.1);
   background: rgba(255, 255, 255, 0.9);
-  transform: scale(1.05);
 }
 
 .stats-section {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .card {
-  width: 250px;
-  height: 180px;
+  width: 220px;
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: all 0.4s ease;
-  opacity: 1; /* Ensure visible */
+  border-radius: 15px;
+  padding: 15px;
+  transition: 0.4s;
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.05);
+  transform: scale(1.05);
 }
 
 .card h2 {
-  font-size: 1.2rem;
-  margin-top: 15px;
+  font-size: 1.1rem;
 }
 
 .card p {
   font-size: 2rem;
-  margin: 10px 0 0;
   font-weight: bold;
 }
 
 .card.active { border: 2px solid #00e676; }
 .card.inactive { border: 2px solid #ffeb3b; }
 .card.total { border: 2px solid #03a9f4; }
+
+.api-users-section {
+  width: 90%;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.api-users-section table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.api-users-section th, .api-users-section td {
+  border: 1px solid #fff;
+  padding: 8px 10px;
+}
+
+.api-users-section th {
+  background: rgba(255,255,255,0.3);
+}
+
+.edit-btn {
+  background-color: #00c853;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #d32f2f;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.back-btn {
+  margin-top: 20px;
+  background: #fff;
+  color: #ff416c;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}

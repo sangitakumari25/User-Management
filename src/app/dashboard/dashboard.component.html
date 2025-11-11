@@ -1,14 +1,19 @@
 <div class="dashboard-container" #dashboardContainer>
   <header class="dashboard-header">
     <h1>Welcome, {{ username }} 👋</h1>
-    <div class="header-buttons">
-      <button class="add-btn" (click)="goToAddUser()">Add User</button>
-      <button class="view-btn" (click)="goToViewUser()">View Users</button>
-      <button class="logout-btn" (click)="logout()">Logout</button>
+    <div class="header-buttons" *ngIf="!showTable">
+      <button (click)="goToAddUser()">➕ Add User</button>
+      <button (click)="goToViewUser()">👀 View Users</button>
+      <button (click)="logout()">🚪 Logout</button>
+    </div>
+
+    <div class="header-buttons" *ngIf="showTable">
+      <button (click)="backToDashboard()">⬅ Back to Dashboard</button>
     </div>
   </header>
 
-  <section class="stats-section">
+  <!--  Stats Cards-------------------------------------------------------------------------------------------------------------- -->
+  <section class="stats-section" *ngIf="!showTable">
     <div class="card active">
       <h2>Active Users</h2>
       <p>{{ activeUsers }}</p>
@@ -21,5 +26,37 @@
       <h2>Total Users</h2>
       <p>{{ totalUsers }}</p>
     </div>
+  </section>
+
+  <!--  Users Table --------------------------------------------------------------------------------------------------------->
+  <section class="api-users-section" *ngIf="showTable">
+    <h2>All Users (Fake + Local)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Sl. No</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Username</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usersFromAPI; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.username || '—' }}</td>
+          <td>{{ user.status || 'active' }}</td>
+          <td>
+            <button class="edit-btn" (click)="editUser(i)">✏️ Edit</button>
+            <button class="delete-btn" (click)="deleteUser(i)">🗑 Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="back-btn" (click)="backToDashboard()">⬅ Back to Dashboard</button>
   </section>
 </div>

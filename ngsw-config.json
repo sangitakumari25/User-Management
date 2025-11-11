@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
+
   "assetGroups": [
     {
       "name": "app",
@@ -27,8 +28,19 @@
           "/*.svg"
         ]
       }
+    },
+    {
+      "name": "offline-fallback",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/offline",
+          "/offline/index.html"
+        ]
+      }
     }
   ],
+
   "dataGroups": [
     {
       "name": "api-cache",
@@ -42,5 +54,11 @@
         "strategy": "performance"
       }
     }
+  ],
+
+  "navigationUrls": [
+    "/**",
+    "!/**/*.*",
+    "!/offline"
   ]
 }
