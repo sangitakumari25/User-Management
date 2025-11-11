@@ -1,0 +1,30 @@
+<div class="add-user-container">
+  <h2>Add New User</h2>
+
+  <form (ngSubmit)="addUser()" #userForm="ngForm">
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="newUser.name"
+      placeholder="Enter name"
+      required
+    />
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="newUser.email"
+      placeholder="Enter email"
+      required
+    />
+    <select name="status" [(ngModel)]="newUser.status" required>
+      <option value="">Select Status</option>
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+
+    <button type="submit">Add User</button>
+  </form>
+
+  <button routerLink="/dashboard" class="back-btn">⬅ Back to Dashboard</button>
+</div>
+

@@ -1,0 +1,25 @@
+<div class="dashboard-container" #dashboardContainer>
+  <header class="dashboard-header">
+    <h1>Welcome, {{ username }} 👋</h1>
+    <div class="header-buttons">
+      <button class="add-btn" (click)="goToAddUser()">Add User</button>
+      <button class="view-btn" (click)="goToViewUser()">View Users</button>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </header>
+
+  <section class="stats-section">
+    <div class="card active">
+      <h2>Active Users</h2>
+      <p>{{ activeUsers }}</p>
+    </div>
+    <div class="card inactive">
+      <h2>Inactive Users</h2>
+      <p>{{ inactiveUsers }}</p>
+    </div>
+    <div class="card total">
+      <h2>Total Users</h2>
+      <p>{{ totalUsers }}</p>
+    </div>
+  </section>
+</div>

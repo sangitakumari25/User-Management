@@ -1,0 +1,34 @@
+<div class="view-user-container">
+  <h2>All Users</h2>
+
+  <table *ngIf="users.length > 0; else noData">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td
+          [ngClass]="{
+            active: user.status === 'active',
+            inactive: user.status === 'inactive'
+          }"
+        >
+          {{ user.status }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <p>No users found. Please add some users!</p>
+  </ng-template>
+
+  <button routerLink="/dashboard" class="back-btn">⬅ Back to Dashboard</button>
+</div>
+
